@@ -12,17 +12,23 @@ The DRR-RATE dataset is built upon the recently released [CT-RATE](https://huggi
 
 <p align="center">
   &nbsp;&nbsp;
-  <img src="assets/drr_plane.png" style="height: 140px; width: auto;"/>
+  <img src="assets/drr_plane.png" style="height: 160px; width: auto;"/>
   &nbsp;&nbsp;
-  <img src="assets/siddon.png" style="height: 140px; width: auto;"/>
+  <img src="assets/siddon.png" style="height: 160px; width: auto;"/>
   &nbsp;&nbsp;
-  <img src="assets/DRR.png" style="height: 140px; width: auto;"/>
+  <img src="assets/DRR.png" style="height: 160px; width: auto;"/>
   &nbsp;&nbsp;
 </p>
 
 ### `./getDRRSiddonJacobsRayTracing`
 
-To generate DRRs of the CT-RATE dataset, the binary tool ./getDRRSiddonJacobsRayTracing<sup>[2,3]</sup> was utilized. Most parameters were kept at their default settings, with the exception of adjusting the volume by 300 mm along the y-axis to enhance the field of view. A threshold cutoff was also set at -100 Hounsfield units (HU). To create lateral view images, the volume was rotated 90 degrees counterclockwise around the z-axis. 
+<p align="center">
+  &nbsp;&nbsp;
+  <img src="assets/output.gif" style="height: 320px; width: auto;"/>
+  &nbsp;&nbsp;
+</p>
+
+To generate DRRs of the CT-RATE dataset, the binary tool `./getDRRSiddonJacobsRayTracing`<sup>[2,3]</sup> was utilized. Most parameters were kept at their default settings, with the exception of adjusting the volume by 300 mm along the y-axis to enhance the field of view. A threshold cutoff was also set at -100 Hounsfield units (HU). To create lateral view images, the volume was rotated 90 degrees counterclockwise around the z-axis. 
 
 ```shell
 user@machine:~$ ./getDRRSiddonJacobsRayTracing input_volume.nii.gz \
