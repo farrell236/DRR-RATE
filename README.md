@@ -24,7 +24,7 @@ The DRR-RATE dataset is built upon the recently released [CT-RATE](https://huggi
 
 <p align="center">
   &nbsp;&nbsp;
-  <img src="assets/output.gif" style="height: 320px; width: auto;"/>
+  <img src="assets/output.gif" style="height: 320px; width: 320px;"/>
   &nbsp;&nbsp;
 </p>
 
