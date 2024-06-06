@@ -1,0 +1,1 @@
+these are DRR-RATE train and valid tested on a chexnet model trained on chexpert dataset and nih cxr dataset
