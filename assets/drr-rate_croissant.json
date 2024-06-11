@@ -1,0 +1,1068 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "distribution": [{
+        "@type": "cr:FileObject",
+        "@id": "repo",
+        "name": "repo",
+        "description": "The Hugging Face git repository.",
+        "contentUrl": "https://huggingface.co/datasets/farrell236/DRR-RATE/tree/refs%2Fconvert%2Fparquet",
+        "encodingFormat": "git+https",
+        "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    }, {
+        "@type": "cr:FileSet",
+        "@id": "parquet-files-for-config-labels",
+        "name": "parquet-files-for-config-labels",
+        "description": "The underlying Parquet files as converted by Hugging Face (see: https://huggingface.co/docs/datasets-server/parquet).",
+        "containedIn": {
+            "@id": "repo"
+        },
+        "encodingFormat": "application/x-parquet",
+        "includes": "labels/*/*.parquet"
+    }, {
+        "@type": "cr:FileSet",
+        "@id": "parquet-files-for-config-metadata",
+        "name": "parquet-files-for-config-metadata",
+        "description": "The underlying Parquet files as converted by Hugging Face (see: https://huggingface.co/docs/datasets-server/parquet).",
+        "containedIn": {
+            "@id": "repo"
+        },
+        "encodingFormat": "application/x-parquet",
+        "includes": "metadata/*/*.parquet"
+    }, {
+        "@type": "cr:FileSet",
+        "@id": "parquet-files-for-config-reports",
+        "name": "parquet-files-for-config-reports",
+        "description": "The underlying Parquet files as converted by Hugging Face (see: https://huggingface.co/docs/datasets-server/parquet).",
+        "containedIn": {
+            "@id": "repo"
+        },
+        "encodingFormat": "application/x-parquet",
+        "includes": "reports/*/*.parquet"
+    }],
+    "recordSet": [{
+        "@type": "cr:RecordSet",
+        "@id": "labels",
+        "name": "labels",
+        "description": "farrell236/DRR-RATE - 'labels' subset\n\nAdditional information:\n- 2 splits: train, validation",
+        "field": [{
+            "@type": "cr:Field",
+            "@id": "labels/ImageName",
+            "name": "labels/ImageName",
+            "description": "Column 'ImageName' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "ImageName"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Medical_material",
+            "name": "labels/Medical_material",
+            "description": "Column 'Medical material' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Medical material"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Arterial_wall_calcification",
+            "name": "labels/Arterial_wall_calcification",
+            "description": "Column 'Arterial wall calcification' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Arterial wall calcification"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Cardiomegaly",
+            "name": "labels/Cardiomegaly",
+            "description": "Column 'Cardiomegaly' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Cardiomegaly"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Pericardial_effusion",
+            "name": "labels/Pericardial_effusion",
+            "description": "Column 'Pericardial effusion' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Pericardial effusion"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Coronary_artery_wall_calcification",
+            "name": "labels/Coronary_artery_wall_calcification",
+            "description": "Column 'Coronary artery wall calcification' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Coronary artery wall calcification"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Hiatal_hernia",
+            "name": "labels/Hiatal_hernia",
+            "description": "Column 'Hiatal hernia' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Hiatal hernia"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Lymphadenopathy",
+            "name": "labels/Lymphadenopathy",
+            "description": "Column 'Lymphadenopathy' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Lymphadenopathy"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Emphysema",
+            "name": "labels/Emphysema",
+            "description": "Column 'Emphysema' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Emphysema"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Atelectasis",
+            "name": "labels/Atelectasis",
+            "description": "Column 'Atelectasis' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Atelectasis"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Lung_nodule",
+            "name": "labels/Lung_nodule",
+            "description": "Column 'Lung nodule' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Lung nodule"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Lung_opacity",
+            "name": "labels/Lung_opacity",
+            "description": "Column 'Lung opacity' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Lung opacity"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Pulmonary_fibrotic_sequela",
+            "name": "labels/Pulmonary_fibrotic_sequela",
+            "description": "Column 'Pulmonary fibrotic sequela' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Pulmonary fibrotic sequela"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Pleural_effusion",
+            "name": "labels/Pleural_effusion",
+            "description": "Column 'Pleural effusion' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Pleural effusion"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Mosaic_attenuation_pattern",
+            "name": "labels/Mosaic_attenuation_pattern",
+            "description": "Column 'Mosaic attenuation pattern' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Mosaic attenuation pattern"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Peribronchial_thickening",
+            "name": "labels/Peribronchial_thickening",
+            "description": "Column 'Peribronchial thickening' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Peribronchial thickening"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Consolidation",
+            "name": "labels/Consolidation",
+            "description": "Column 'Consolidation' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Consolidation"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Bronchiectasis",
+            "name": "labels/Bronchiectasis",
+            "description": "Column 'Bronchiectasis' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Bronchiectasis"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "labels/Interlobular_septal_thickening",
+            "name": "labels/Interlobular_septal_thickening",
+            "description": "Column 'Interlobular septal thickening' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-labels"
+                },
+                "extract": {
+                    "column": "Interlobular septal thickening"
+                }
+            }
+        }]
+    }, {
+        "@type": "cr:RecordSet",
+        "@id": "metadata",
+        "name": "metadata",
+        "description": "farrell236/DRR-RATE - 'metadata' subset\n\nAdditional information:\n- 2 splits: train, validation",
+        "field": [{
+            "@type": "cr:Field",
+            "@id": "metadata/ImageName",
+            "name": "metadata/ImageName",
+            "description": "Column 'ImageName' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ImageName"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/Manufacturer",
+            "name": "metadata/Manufacturer",
+            "description": "Column 'Manufacturer' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "Manufacturer"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/SeriesDescription",
+            "name": "metadata/SeriesDescription",
+            "description": "Column 'SeriesDescription' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "SeriesDescription"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ManufacturerModelName",
+            "name": "metadata/ManufacturerModelName",
+            "description": "Column 'ManufacturerModelName' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ManufacturerModelName"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/PatientSex",
+            "name": "metadata/PatientSex",
+            "description": "Column 'PatientSex' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "PatientSex"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/PatientAge",
+            "name": "metadata/PatientAge",
+            "description": "Column 'PatientAge' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "PatientAge"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ReconstructionDiameter",
+            "name": "metadata/ReconstructionDiameter",
+            "description": "Column 'ReconstructionDiameter' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ReconstructionDiameter"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/DistanceSourceToDetector",
+            "name": "metadata/DistanceSourceToDetector",
+            "description": "Column 'DistanceSourceToDetector' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "DistanceSourceToDetector"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/DistanceSourceToPatient",
+            "name": "metadata/DistanceSourceToPatient",
+            "description": "Column 'DistanceSourceToPatient' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "DistanceSourceToPatient"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/GantryDetectorTilt",
+            "name": "metadata/GantryDetectorTilt",
+            "description": "Column 'GantryDetectorTilt' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "GantryDetectorTilt"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/TableHeight",
+            "name": "metadata/TableHeight",
+            "description": "Column 'TableHeight' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "TableHeight"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/RotationDirection",
+            "name": "metadata/RotationDirection",
+            "description": "Column 'RotationDirection' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "RotationDirection"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ExposureTime",
+            "name": "metadata/ExposureTime",
+            "description": "Column 'ExposureTime' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ExposureTime"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/XRayTubeCurrent",
+            "name": "metadata/XRayTubeCurrent",
+            "description": "Column 'XRayTubeCurrent' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "XRayTubeCurrent"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/Exposure",
+            "name": "metadata/Exposure",
+            "description": "Column 'Exposure' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "Exposure"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/FilterType",
+            "name": "metadata/FilterType",
+            "description": "Column 'FilterType' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "FilterType"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/GeneratorPower",
+            "name": "metadata/GeneratorPower",
+            "description": "Column 'GeneratorPower' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "GeneratorPower"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/FocalSpots",
+            "name": "metadata/FocalSpots",
+            "description": "Column 'FocalSpots' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "FocalSpots"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ConvolutionKernel",
+            "name": "metadata/ConvolutionKernel",
+            "description": "Column 'ConvolutionKernel' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ConvolutionKernel"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/PatientPosition",
+            "name": "metadata/PatientPosition",
+            "description": "Column 'PatientPosition' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "PatientPosition"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/RevolutionTime",
+            "name": "metadata/RevolutionTime",
+            "description": "Column 'RevolutionTime' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "RevolutionTime"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/SingleCollimationWidth",
+            "name": "metadata/SingleCollimationWidth",
+            "description": "Column 'SingleCollimationWidth' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "SingleCollimationWidth"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/TotalCollimationWidth",
+            "name": "metadata/TotalCollimationWidth",
+            "description": "Column 'TotalCollimationWidth' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "TotalCollimationWidth"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/TableSpeed",
+            "name": "metadata/TableSpeed",
+            "description": "Column 'TableSpeed' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "TableSpeed"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/TableFeedPerRotation",
+            "name": "metadata/TableFeedPerRotation",
+            "description": "Column 'TableFeedPerRotation' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "TableFeedPerRotation"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/SpiralPitchFactor",
+            "name": "metadata/SpiralPitchFactor",
+            "description": "Column 'SpiralPitchFactor' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "SpiralPitchFactor"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/DataCollectionCenterPatient",
+            "name": "metadata/DataCollectionCenterPatient",
+            "description": "Column 'DataCollectionCenterPatient' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "DataCollectionCenterPatient"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ReconstructionTargetCenterPatient",
+            "name": "metadata/ReconstructionTargetCenterPatient",
+            "description": "Column 'ReconstructionTargetCenterPatient' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ReconstructionTargetCenterPatient"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ExposureModulationType",
+            "name": "metadata/ExposureModulationType",
+            "description": "Column 'ExposureModulationType' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ExposureModulationType"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/CTDIvol",
+            "name": "metadata/CTDIvol",
+            "description": "Column 'CTDIvol' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "CTDIvol"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ImagePositionPatient",
+            "name": "metadata/ImagePositionPatient",
+            "description": "Column 'ImagePositionPatient' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ImagePositionPatient"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ImageOrientationPatient",
+            "name": "metadata/ImageOrientationPatient",
+            "description": "Column 'ImageOrientationPatient' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ImageOrientationPatient"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/SliceLocation",
+            "name": "metadata/SliceLocation",
+            "description": "Column 'SliceLocation' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "SliceLocation"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/SamplesPerPixel",
+            "name": "metadata/SamplesPerPixel",
+            "description": "Column 'SamplesPerPixel' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "SamplesPerPixel"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/PhotometricInterpretation",
+            "name": "metadata/PhotometricInterpretation",
+            "description": "Column 'PhotometricInterpretation' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "PhotometricInterpretation"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/Rows",
+            "name": "metadata/Rows",
+            "description": "Column 'Rows' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "Rows"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/Columns",
+            "name": "metadata/Columns",
+            "description": "Column 'Columns' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "Columns"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/XYSpacing",
+            "name": "metadata/XYSpacing",
+            "description": "Column 'XYSpacing' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "XYSpacing"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/RescaleIntercept",
+            "name": "metadata/RescaleIntercept",
+            "description": "Column 'RescaleIntercept' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "RescaleIntercept"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/RescaleSlope",
+            "name": "metadata/RescaleSlope",
+            "description": "Column 'RescaleSlope' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "RescaleSlope"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/RescaleType",
+            "name": "metadata/RescaleType",
+            "description": "Column 'RescaleType' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "RescaleType"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/NumberofSlices",
+            "name": "metadata/NumberofSlices",
+            "description": "Column 'NumberofSlices' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "NumberofSlices"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/ZSpacing",
+            "name": "metadata/ZSpacing",
+            "description": "Column 'ZSpacing' from the Hugging Face parquet file.",
+            "dataType": "sc:Float",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "ZSpacing"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "metadata/StudyDate",
+            "name": "metadata/StudyDate",
+            "description": "Column 'StudyDate' from the Hugging Face parquet file.",
+            "dataType": "sc:Integer",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-metadata"
+                },
+                "extract": {
+                    "column": "StudyDate"
+                }
+            }
+        }]
+    }, {
+        "@type": "cr:RecordSet",
+        "@id": "reports",
+        "name": "reports",
+        "description": "farrell236/DRR-RATE - 'reports' subset\n\nAdditional information:\n- 2 splits: train, validation",
+        "field": [{
+            "@type": "cr:Field",
+            "@id": "reports/ImageName",
+            "name": "reports/ImageName",
+            "description": "Column 'ImageName' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-reports"
+                },
+                "extract": {
+                    "column": "ImageName"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "reports/ClinicalInformation_EN",
+            "name": "reports/ClinicalInformation_EN",
+            "description": "Column 'ClinicalInformation_EN' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-reports"
+                },
+                "extract": {
+                    "column": "ClinicalInformation_EN"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "reports/Technique_EN",
+            "name": "reports/Technique_EN",
+            "description": "Column 'Technique_EN' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-reports"
+                },
+                "extract": {
+                    "column": "Technique_EN"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "reports/Findings_EN",
+            "name": "reports/Findings_EN",
+            "description": "Column 'Findings_EN' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-reports"
+                },
+                "extract": {
+                    "column": "Findings_EN"
+                }
+            }
+        }, {
+            "@type": "cr:Field",
+            "@id": "reports/Impressions_EN",
+            "name": "reports/Impressions_EN",
+            "description": "Column 'Impressions_EN' from the Hugging Face parquet file.",
+            "dataType": "sc:Text",
+            "source": {
+                "fileSet": {
+                    "@id": "parquet-files-for-config-reports"
+                },
+                "extract": {
+                    "column": "Impressions_EN"
+                }
+            }
+        }]
+    }],
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "name": "DRR-RATE",
+    "description": "The DRR-RATE dataset is built upon the recently released CT-RATE[1] dataset, which comprises 25,692 non-contrast chest CT volumes from 21,304 unique patients. Each study is accompanied by a corresponding radiology text report and binary labels for 18 pathology classes. The dataset has been expanded to 50,188 volumes through the use of various reconstruction techniques from raw DICOM imaging data. The data is already anonymized, ensuring compliance with the Health Insurance Portability and Accountability Act (HIPAA), and the requirement for informed consent was waived. CT-RATE is published under the Creative Commons Attribution-NonCommercial-ShareAlike (CC-BY-NC-SA) license. In accordance with this license, DRR-RATE is licensed under the same terms.",
+    "alternateName": ["farrell236/DRR-RATE"],
+    "creator": {
+        "@type": "Person",
+        "name": "Benjamin Hou",
+        "url": "https://huggingface.co/farrell236"
+    },
+    "keywords": ["cc-by-nc-sa-4.0", "Croissant", "arxiv:2406.03688", "🇺🇸 Region: US"],
+    "license": "https://choosealicense.com/licenses/cc-by-nc-sa-4.0/",
+    "url": "https://huggingface.co/datasets/farrell236/DRR-RATE"
+}
