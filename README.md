@@ -4,11 +4,11 @@
   &nbsp;&nbsp;
   <a href="https://huggingface.co/datasets/farrell236/DRR-RATE"><img src="https://img.shields.io/badge/HuggingFace-FFD21E.svg?style=for-the-badge&logo=Huggingface&logoColor=black" style="height: 40px; width: auto;"/></a>
   &nbsp;&nbsp;
-  <a href=""><img src="https://img.shields.io/badge/arXiv-B31B1B.svg?style=for-the-badge&logo=arXiv&logoColor=white" style="height: 40px; width: auto;"/></a>
+  <a href="https://arxiv.org/abs/2406.03688"><img src="https://img.shields.io/badge/arXiv-B31B1B.svg?style=for-the-badge&logo=arXiv&logoColor=white" style="height: 40px; width: auto;"/></a>
   &nbsp;&nbsp;
 </p>
 
-The DRR-RATE dataset is built upon the recently released [CT-RATE](https://huggingface.co/datasets/ibrahimhamamci/CT-RATE)<sup>[1]</sup> dataset, which comprises 25,692 non-contrast chest CT volumes from 21,304 unique patients. Each study is accompanied by a corresponding radiology text report and binary labels for 18 pathology classes. The dataset has been expanded to 50,188 volumes through the use of various reconstruction techniques from raw DICOM imaging data. The data is already anonymized, ensuring compliance with the Health Insurance Portability and Accountability Act (HIPAA), and the requirement for informed consent was waived. CT-RATE is published under the Creative Commons Attribution-NonCommercial-ShareAlike (CC-BY-NC-SA) license. In accordance with this license, DRR-RATE is licensed under the same terms.
+The DRR-RATE dataset is built upon the recently released [CT-RATE](https://huggingface.co/datasets/ibrahimhamamci/CT-RATE)<sup>[1]</sup> dataset, which comprises 25,692 non-contrast chest CT volumes from 21,304 unique patients. Each study is accompanied by a corresponding radiology text report and binary labels for 18 pathology classes. The dataset has been expanded to 50,188 volumes through the modification of the reconstruction matrix extracted from the raw DICOM study. As the dataset was already anonymized, compliance with the Health Insurance Portability and Accountability Act (HIPAA) was ensured, and the requirement for informed consent was waived. CT-RATE is published under the Creative Commons Attribution- NonCommercial-ShareAlike (CC BY-NC-SA) license. In accordance with this license, we provide appropriate credit to the original creator, do not use the material for commercial purposes, and distribute any derivatives under the same license.
 
 <p align="center">
   &nbsp;&nbsp;
@@ -20,7 +20,7 @@ The DRR-RATE dataset is built upon the recently released [CT-RATE](https://huggi
   &nbsp;&nbsp;
 </p>
 
-### `./getDRRSiddonJacobsRayTracing`
+### DRR Siddon-Jacobs Ray Tracing
 
 <p align="center">
   &nbsp;&nbsp;
@@ -57,5 +57,10 @@ user@machine:~$ ./getDRRSiddonJacobsRayTracing input_volume.nii.gz \
 ### Citation
 
 ```text
-
+@article{drr-rate,
+  title={Shadow and Light: Digitally Reconstructed Radiographs for Disease Classification},
+  author={Hou, Benjamin and Zhu, Qingqing and Mathai, Tejas Sudarshan and Jin, Qiao and Lu, Zhiyong and Summers, Ronald M},
+  journal={arXiv preprint arXiv:2406.03688},
+  year={2024}
+}
 ```
